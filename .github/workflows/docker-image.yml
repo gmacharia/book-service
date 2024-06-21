@@ -33,5 +33,6 @@ jobs:
       name: Build and Publish Docker Image
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/book-service
+          ./mvnw -DskipTests spring-boot:build-image -Dspring-boot.build-image.imageName=${{ secrets.DOCKER_USERNAME }}/book-service
+          docker push ${{ secrets.DOCKER_USERNAME }}/book-service
 
