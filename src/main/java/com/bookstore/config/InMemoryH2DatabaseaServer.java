@@ -18,6 +18,6 @@ public class InMemoryH2DatabaseaServer {
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public Server h2Server() throws SQLException {
-        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9093");
+        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
     }
 }
